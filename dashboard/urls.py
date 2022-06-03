@@ -8,5 +8,7 @@ urlpatterns = [
     path('addbook/',views.addbook,name="Add Books"),
     path('opac/all/',views.showbook,name="OPAC"),
     path("bookadding/",views.addbooksub,name="BookAddedFormSubmit"),
-    path('reports/',views.reports,name="Reports")
+    path('reports/',views.reports,name="Reports"),
+    path("addstudent/",views.studentadd,name="Student Add"),
+    path("showstudent/",views.showstudent,name="showstudent")
 ]

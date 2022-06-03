@@ -47,9 +47,36 @@ def addbook(request):
     return render(request,"forms-layouts.html")
 
 def showbook(request):
-    books= AddBook.objects.all()
-    return render(request, "tables-data.html" ,{"books":books})
-
+    books=AddBook.objects.all().order_by('Date')
+    recentbook=[]
+    for book in books:
+        lstofcount=[]
+        count=countbook(book.Author,book.Title)
+        lstofcount.append(count)
+        lstofcount.append(book)
+        if(count==0):
+            status="Not Available"
+        elif(count >0 and count<4):
+            status="Few"
+        else:
+            status="Available"
+        lstofcount.append(status)    
+        recentbook.append(lstofcount)
+        
+    # print(recentbook)   
+    lstofpop=[]
+    for i in range(len(recentbook)):
+        for j in range(len(recentbook)):
+            if i!=j:
+                if j not in lstofpop:
+                    if recentbook[i][1].Author==recentbook[j][1].Author and recentbook[i][1].Title==recentbook[j][1].Title:
+                        lstofpop.append(i)
+    newlst=[]
+    for i in range(len(recentbook)):
+        if i not in lstofpop:
+            newlst.append(recentbook[i])
+    # print(newlst)
+    return render(request,"tables-data.html",{"books":newlst})
 def addbooksub(request):
     if request.method == "POST":
         try:
@@ -168,3 +195,9 @@ def reports(request):
             newlst.append(recentbook[i])
     # print(newlst)
     return render(request,"report.html",{"books":newlst})
+
+def studentadd(request):
+    return render(request,"studentadd.html")
+
+def showstudent(request):
+    return render(request,"showstudent.html")

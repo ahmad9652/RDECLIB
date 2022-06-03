@@ -1,0 +1,119 @@
+{% extends "dashboardbase.html" %}
+{% block css %}
+<!-- Template Main CSS File -->
+<link href="/static/css/assets/css/style.css" rel="stylesheet">
+{% endblock css %}
+{% block main %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Add Books</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Books</li>
+          <li class="breadcrumb-item active">Add Book</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+
+          
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row align-items-top">
+                    <div class="col-lg-4 my-3">
+                        <div class="card">
+                            <img src="/static/css/assets/img/card.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card with an image on top</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">Go somewhere</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="verticalycentered" tabindex="-1" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Vertically Centered</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Table with hoverable rows</h5>
+            
+                          <!-- Table with hoverable rows -->
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Position</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Start Date</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Brandon Jacob</td>
+                                <td>Designer</td>
+                                <td>28</td>
+                                <td>2016-05-25</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Bridie Kessler</td>
+                                <td>Developer</td>
+                                <td>35</td>
+                                <td>2014-12-05</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Ashleigh Langosh</td>
+                                <td>Finance</td>
+                                <td>45</td>
+                                <td>2011-08-12</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">4</th>
+                                <td>Angus Grady</td>
+                                <td>HR</td>
+                                <td>34</td>
+                                <td>2012-06-11</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">5</th>
+                                <td>Raheem Lehner</td>
+                                <td>Dynamic Division Officer</td>
+                                <td>47</td>
+                                <td>2011-04-19</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <!-- End Table with hoverable rows -->
+            
+                        </div>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+  </main><!-- End #main -->
+{% endblock main %}
+{% block tempjs %}
+<!-- Template Main JS File -->
+  <script src="/static/css/assets/js/main.js"></script>
+{% endblock tempjs %}
